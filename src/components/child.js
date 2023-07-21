@@ -5,10 +5,10 @@ const Child = (props) => {
         <div className="child">
             <h2>Child Component</h2>
             <ul>
-                {props.todos.map((todo, index) => (
+                {props.todos.map((val, index) => (
                     <li key={index}>
-                        {todo.task} 
-                        {!todo.completed && (
+                        {val.task} 
+                        {val.todo!="completed" && (
                             <button onClick={() => props.handleChange(index)}>
                                 Complete
                             </button>)}

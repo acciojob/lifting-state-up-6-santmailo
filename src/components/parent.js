@@ -5,25 +5,26 @@ const Parent = () => {
     const sample = [
         {
             task : "Learn React",
-            taskCompleted : false
+            todo : "not completed"
         },
         {
             task : "Build a React app",
-            taskCompleted : false
+            todo : "not completed"
         },
         {
             task : "Deploy the React app",
-            taskCompleted : false
+            todo : "not completed"
         }
     ];
     const [todos, setTodos] = React.useState(()=>sample);
 
     const handleChange = (id) => {
-        const newTodos = todos.map((todo,index) => {
+        const newTodos = todos.map((val,index) => {
             if (index === id) {
-              todo.completed = true;
+              val.todo = "completed";
             }
-            return todo;
+            return val;
+
           });
           setTodos(newTodos);
     }   
